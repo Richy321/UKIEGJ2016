@@ -13,6 +13,9 @@ namespace Assets.Scripts
         public float startHealth = 100.0f;
         public float speed = 2.0f;
         public float angular = 5.0f;
+		public bool firing;
+		public bool trapping;
+		public Laz lazScript;
 
         public GameObject RootGameObject;
 
@@ -20,6 +23,8 @@ namespace Assets.Scripts
 
         void Start()
         {
+			firing = false;
+			trapping = false;
             health = startHealth;
         }
 
@@ -28,6 +33,8 @@ namespace Assets.Scripts
             UpdateMovement();
 
             UpdateAiming();
+
+			UpdateFire ();
         }
 
         void UpdateMovement()
@@ -83,5 +90,26 @@ namespace Assets.Scripts
 
             }
         }
+
+		void UpdateFire(){
+
+			string fire1 = "FireP" + PlayerNumber;
+			//string fire2 = "TrapP" + PlayerNumber;
+
+			if (Input.GetAxis (fire1) > 0.1f) {
+				if (!firing) {
+					lazScript.startLaz ();
+					firing = true;
+					Debug.Log ("Fire Start");
+				} 
+			}
+
+			if ((Input.GetAxis(fire1) < 0.1f) && firing) 
+			{
+						lazScript.stopLaz ();
+						firing = false;
+						Debug.Log ("Stop");
+			}
+		}
     }
 }
