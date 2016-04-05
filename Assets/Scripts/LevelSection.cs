@@ -24,6 +24,13 @@ public class LevelSection : MonoBehaviour
         playerChar = GameObject.FindObjectOfType<Assets.Scripts.Character>().gameObject;
 	    Enemy[] Enemies = GameObject.FindObjectsOfType<Enemy>();
         sceneCont = GameObject.FindObjectOfType<GUIController>();
+        BoundingBox.center = gameObject.transform.position;
+        BoundingBox.size = gameObject.transform.localScale;
+        if (BoundingBox.Contains(playerChar.transform.position))
+        {
+            sceneCont.CurSection = this;
+        }
+
         foreach (Enemy enemy in Enemies)
         {
             if(BoundingBox.Contains(enemy.transform.position))
@@ -33,12 +40,6 @@ public class LevelSection : MonoBehaviour
             }
         }
         startEnemies = EnemiesLeft;
-        BoundingBox.center = gameObject.transform.position;
-        BoundingBox.size = gameObject.transform.localScale;
-        if (BoundingBox.Contains(playerChar.transform.position))
-        {
-            sceneCont.CurSection = this;
-        }
 
         BlendableItem[] blendables = GameObject.FindObjectsOfType<BlendableItem>();
         foreach (BlendableItem blendable in blendables)
