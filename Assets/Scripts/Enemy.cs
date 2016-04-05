@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
     public Character[] characters;
     public bool AllowChasing = true;
 
+    public CharacterController CharController;
+
     void Start()
     {
         radiusCollider = GetComponent<SphereCollider>();
@@ -103,7 +105,10 @@ public class Enemy : MonoBehaviour
 	    {
             float step = patrolSpeed * Time.deltaTime;
             Vector3 target = wayPoints[wayPointIndex].transform.position;
-	        this.transform.position = Vector3.MoveTowards(transform.position, target, step);
+
+            Vector3 newPos = Vector3.MoveTowards(transform.position, target, step);
+            CharController.Move(newPos - transform.position);
+
 	        if (Mathf.Abs(Vector3.Distance(this.transform.position, wayPoints[wayPointIndex].transform.position)) <=
 	            switchY)
 	        {
@@ -156,7 +161,8 @@ public class Enemy : MonoBehaviour
         if (chaseTarget)
         {
             float chaseStep = chaseSpeed*Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, chaseTarget.position, chaseStep);
+            Vector3 newPos = Vector3.MoveTowards(transform.position, chaseTarget.position, chaseStep);
+            CharController.Move(newPos - transform.position);
         }
     }
 
