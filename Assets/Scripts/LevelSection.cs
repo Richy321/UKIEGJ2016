@@ -7,7 +7,7 @@ public class LevelSection : MonoBehaviour
     //public List<Enemy> Enemies;
     public int EnemiesLeft;
     public string Name;
-    public Bounds BoundingBox;
+    private Bounds BoundingBox;
 
     private bool sectionWon;
     public float blendTime;
@@ -28,6 +28,8 @@ public class LevelSection : MonoBehaviour
                 EnemiesLeft++;
             }
         }
+        BoundingBox.center = gameObject.transform.position;
+        BoundingBox.size = gameObject.transform.localScale;
 	}
 	
 	// Update is called once per frame

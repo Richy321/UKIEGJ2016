@@ -14,7 +14,7 @@ public class GUIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        MakeToolTip(new Vector3(0,0,0), 200, 150, "This is a tooltip\n\nTest");
+        //MakeToolTip(new Vector3(0,0,0), 200, 150, "This is a tooltip\n\nTest");
     }
 
 	// Update is called once per frame
