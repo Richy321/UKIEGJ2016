@@ -34,6 +34,8 @@ namespace Assets.Scripts
 
         public ParticleSystem CaptureParticleSystem;
 
+        public CharacterController CharController;
+
         public int PlayerNumber = 1;
 
         public enum PlayerState
@@ -49,7 +51,6 @@ namespace Assets.Scripts
 			firing = false;
             health = startHealth;
             playerState = PlayerState.None;
-
 
             captureEmitParams.startLifetime = 0.5f;
         }
@@ -69,6 +70,7 @@ namespace Assets.Scripts
         {
             if (playerState == PlayerState.TakingDamage)
             {
+                Debug.Log("BOUNCE");
                 bounceTime += Time.deltaTime;
 
                 transform.position = Vector3.Lerp(transform.position,
@@ -88,7 +90,9 @@ namespace Assets.Scripts
                 Vector3 delta = new Vector3(horizontalMove, 0.0f, verticalMove)*speed;
                 Vector3 newPos = transform.position += delta*Time.deltaTime;
 
-                transform.position = newPos;
+                CharController.SimpleMove(delta*Time.deltaTime);
+
+                //transform.position = newPos;
             }
         }
 
