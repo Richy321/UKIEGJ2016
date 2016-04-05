@@ -30,7 +30,11 @@ public class LevelSection : MonoBehaviour
         }
         BoundingBox.center = gameObject.transform.position;
         BoundingBox.size = gameObject.transform.localScale;
-	}
+        if (BoundingBox.Contains(playerChar.transform.position))
+        {
+            sceneCont.CurSection = this;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update()

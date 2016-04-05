@@ -18,6 +18,7 @@ public class GUIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
         //MakeToolTip(new Vector3(0,0,0), 200, 150, "This is a tooltip\n\nTest");
     }
 
@@ -70,14 +71,14 @@ public class GUIController : MonoBehaviour {
         textItem.AddComponent<CanvasRenderer>();
         Text toolTipText = textItem.AddComponent<Text>();
         toolTipText.alignment = TextAnchor.MiddleLeft;
-        toolTipText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
-        toolTipText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+        toolTipText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width-10);
+        toolTipText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height-10);
         toolTipText.rectTransform.localScale = new Vector3(1,1,1);
         toolTipText.rectTransform.localPosition = new Vector3(0, 0, 0);
         toolTipText.font = ToolTipFont;
         toolTipText.color = new Color(0, 0, 0);
         toolTipText.text = text;
-        return toolTipCanvas;
+        return stuffContainer;
 
     }
 }
