@@ -7,8 +7,10 @@ public class BlendableItem : MonoBehaviour
 {
     public float duration = 2.0f;
     public Renderer rend;
+    private float endLerp = 1.0f;
     private float curLerp = 0.0f;
     private bool doLerp = false;
+    private float lerpDistance = 0.0f;
     private Shader shader;
 
     // Use this for initialization
@@ -22,12 +24,11 @@ public class BlendableItem : MonoBehaviour
         }
     }
 
-    public void StartLerp()
+    public void LerpTo(float toLerpTo)
     {
-        if (!doLerp && curLerp < 1.0f)
-        {
-            doLerp = true;
-        }
+        endLerp = toLerpTo;
+        lerpDistance = endLerp - curLerp;
+        doLerp = true;
     }
 	
 	// Update is called once per frame
@@ -35,13 +36,16 @@ public class BlendableItem : MonoBehaviour
 	{
         if (doLerp)
         {
-            if (curLerp < 1)
+            if(curLerp < endLerp)
             {
-                curLerp += Time.deltaTime / duration;
+                curLerp += (Time.deltaTime / duration) * lerpDistance;
                 curLerp = Mathf.Clamp01(curLerp);
             }
-            else { doLerp = false; }
-            rend.material.SetFloat("_Blend", curLerp);
+            else {
+                if (curLerp > endLerp) curLerp = endLerp;
+                doLerp = false;
+            }
+            rend.material.SetFloat("_Saturation", curLerp);
         }
     }
 }

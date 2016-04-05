@@ -1,10 +1,23 @@
 fileFormatVersion: 2
 guid: 4fd7311afcf0285429512870b0f09a2a
-timeCreated: 1459801155
+timeCreated: 1459876876
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - EnemyCountText: {instanceID: 0}
+  - AreaNameText: {instanceID: 0}
+  - HealthText: {instanceID: 0}
+  - HealthText2: {instanceID: 0}
+  - player: {instanceID: 0}
+  - player2: {instanceID: 0}
+  - CurSection: {instanceID: 0}
+  - ToolTipBackground: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - ToolTipFont: {instanceID: 0}
+  - ToolTipCamera: {instanceID: 0}
+  - toolTipCanvas: {instanceID: 0}
+  - HealthBarP1: {instanceID: 0}
+  - HealthBarP2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -15,6 +15,8 @@ public class GUIController : MonoBehaviour {
     public Font ToolTipFont;
     public Camera ToolTipCamera;
     public GameObject toolTipCanvas;
+    public RectTransform HealthBarP1;
+    public RectTransform HealthBarP2;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +29,14 @@ public class GUIController : MonoBehaviour {
         EnemyCountText.text = "Enemies remaining: " + CurSection.EnemiesLeft;
         AreaNameText.text = "Area: " + CurSection.Name;
         HealthText.text = "P1 HP: " + player.health;
-        if (player2 != null) HealthText2.text =  "P2 HP: " + player2.health;
+        //HealthBarP1.localScale = new Vector3(player.health / player.startHealth, 1, 1);
+        if (player2 != null)
+        {
+
+            HealthText2.text = "P2 HP: " + player2.health;
+            //HealthBarP2.localScale = new Vector3(player.health / player2.startHealth, 1, 1);
+        }
+
 	}
 
     public GameObject MakeToolTip(Vector3 position, float width, float height, string text)
