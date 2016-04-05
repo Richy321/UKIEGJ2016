@@ -16,7 +16,6 @@ namespace Assets.Scripts
 		public bool firing;
         public bool capturing;
 		public Laz lazScript;
-        public float captureRadius;
         public Color playerColour;
 
         private float hitBounceAmount = 3.5f;
@@ -24,10 +23,16 @@ namespace Assets.Scripts
         private float bounceTime;
         private float bounceTimeMax = 0.5f;
 
+        private float captureEmitInterval = 0.5f;
+        private float captureEmitTime = 0.0f;
+        private ParticleSystem.EmitParams captureEmitParams;
+
 
         public MeshRenderer CaptureRenderer;
 
         public GameObject RootGameObject;
+
+        public ParticleSystem CaptureParticleSystem;
 
         public int PlayerNumber = 1;
 
@@ -44,6 +49,9 @@ namespace Assets.Scripts
 			firing = false;
             health = startHealth;
             playerState = PlayerState.None;
+
+
+            captureEmitParams.startLifetime = 0.5f;
         }
 
         void Update()
@@ -129,12 +137,26 @@ namespace Assets.Scripts
 
             if (Input.GetAxis(fire2) > 0.1f)
             {
+                if (!capturing)
+                    CaptureParticleSystem.Emit(captureEmitParams, 100);
+
                 capturing = true;
                 CaptureRenderer.material.color = Color.yellow;
-                //Debug.Log("Capturing P" + PlayerNumber);
+
+                if (captureEmitTime > captureEmitInterval)
+                {
+                    CaptureParticleSystem.Emit(captureEmitParams, 100);
+                    captureEmitTime = 0.0f;
+                }
+
+                captureEmitTime += Time.deltaTime;
             }
             else
+            {
+                capturing = false;
+                captureEmitTime = 0.0f;
                 CaptureRenderer.material.color = playerColour;
+            }
         }
 
         void UpdateFire(){

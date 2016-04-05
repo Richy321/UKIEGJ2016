@@ -27,31 +27,34 @@ public class Enemy : MonoBehaviour
 	public float patrolSpeed = 10.0f;
     public float damage = 25.0f;
 
-    public Transform target;
+    public float chaseSpeed = 2.0f;
+    public Transform chaseTarget;
+    public float chaseDistance = 5.0f;
 
-        void Start()
+    public Character[] characters;
+    public bool AllowChasing = true;
+
+    void Start()
     {
-		float step = patrolSpeed * Time.deltaTime;
         radiusCollider = GetComponent<SphereCollider>();
-		Patrol ();
+
+        characters = FindObjectsOfType<Character>();
+        Patrol ();
     }
     void Update()
     {
+        CheckChaseDistances();
+
         switch (enemyState)
         {
-		case EnemyState.Patrol:
-			UpdatePatrol ();
+		    case EnemyState.Patrol:
+			    UpdatePatrol();
                 break;
             case EnemyState.Chase:
-                //move towards target if not null
+                UpdateChase();
                 break;
             case EnemyState.Frozen:
-                    timeFrozen += Time.deltaTime;
-                    if (timeFrozen >= maxFrozen && !isCaptureable)
-                    {
-                        isCaptureable = true;
-                        meshRend.material.color = Color.cyan;
-                    }
+                UpdateFreeze();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -66,11 +69,25 @@ public class Enemy : MonoBehaviour
         Debug.Log("Freeze");
     }
 
+    public void UpdateFreeze()
+    {
+        timeFrozen += Time.deltaTime;
+        if (timeFrozen >= maxFrozen && !isCaptureable)
+        {
+            isCaptureable = true;
+            meshRend.material.color = Color.cyan;
+        }
+    }
+
     public void UnFreeze()
     {
         timeFrozen = 0.0f;
         isCaptureable = false;
-        Patrol();
+
+        if (chaseTarget)
+            Chase();
+        else
+            Patrol();
         Debug.Log("UnFreeze");
     }
 
@@ -87,7 +104,6 @@ public class Enemy : MonoBehaviour
 		this.transform.position = Vector3.MoveTowards (transform.position, target, step);
 		if (Mathf.Abs(Vector3.Distance (this.transform.position, wayPoints [wayPointIndex].transform.position)) <= switchY)
 		{
-
 			wayPointIndex++;
 			if (wayPointIndex >= wayPoints.Length) {
 				wayPointIndex = 0;
@@ -95,10 +111,48 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-    public void Chase(Transform newTarget)
+    public void CheckChaseDistances()
+    {
+        if (enemyState == EnemyState.Frozen)
+            return;
+
+        if (chaseTarget != null && Mathf.Abs((transform.position - chaseTarget.position).magnitude) > chaseDistance)
+        {
+            chaseTarget = null;
+        }
+
+        if (!chaseTarget)
+        {
+            foreach (Character character in characters)
+            {
+                float dist = Mathf.Abs((character.gameObject.transform.position - transform.position).magnitude);
+                if (dist <= chaseDistance)
+                {
+                    chaseTarget = character.gameObject.transform;
+                    Chase();
+                }
+            }
+        }
+
+        if (!AllowChasing)
+            chaseTarget = null;
+
+        if (!chaseTarget)
+            Patrol();
+    }
+    public void Chase()
     {
         meshRend.material.color = Color.red;
-        target = newTarget;
+        enemyState = EnemyState.Chase;
+    }
+
+    public void UpdateChase()
+    {
+        if (chaseTarget)
+        {
+            float chaseStep = chaseSpeed*Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, chaseTarget.position, chaseStep);
+        }
     }
 
     public void Capture()
@@ -126,6 +180,15 @@ public class Enemy : MonoBehaviour
                     Capture();
             }
         }
+
+        /*if (other.tag == "Player" && enemyState != EnemyState.Frozen)
+        {
+            if (!chaseTarget)
+            {
+                chaseTarget = other.gameObject.transform;
+                Chase();
+            }
+        }*/
     }
 
     public void OnTriggerEnter(Collider other)
@@ -142,12 +205,28 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Character characterScript = collision.gameObject.GetComponentInParent<Character>();
+            characterScript.TakeDamage(this);
+        }
+    }
+
+
     public void OnTriggerExit(Collider other)
     {
         if (other.tag == "Bullet" && enemyState == EnemyState.Frozen)
         {
-            if(other != radiusCollider)
+            if (other != radiusCollider)
                 UnFreeze();
         }
+
+        /*if (other.tag == "Player" && enemyState != EnemyState.Frozen)
+        {
+            chaseTarget = null;
+            Patrol();
+        }*/
     }
 }
