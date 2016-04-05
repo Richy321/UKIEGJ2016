@@ -1,0 +1,511 @@
+fileFormatVersion: 2
+guid: 129d5fc4c95592548841076edc96690f
+timeCreated: 1459888202
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: dirt_monster_05:headusOBJexport
+    100002: Global_ctrl
+    100004: J_L_ear
+    100006: j_L_thigh
+    100008: J_R_ear
+    100010: j_R_thigh
+    100012: joint10
+    100014: joint11
+    100016: joint12
+    100018: joint13
+    100020: joint14
+    100022: joint15
+    100024: joint16
+    100026: joint18
+    100028: joint18 1
+    100030: joint19
+    100032: joint19 1
+    100034: joint2
+    100036: joint2 1
+    100038: joint20
+    100040: joint20 1
+    100042: joint21
+    100044: joint21 1
+    100046: joint22
+    100048: joint22 1
+    100050: joint23
+    100052: joint23 1
+    100054: joint24
+    100056: joint25
+    100058: joint26
+    100060: joint27
+    100062: joint3
+    100064: joint3 1
+    100066: joint32
+    100068: joint33
+    100070: joint33 1
+    100072: joint34
+    100074: joint34 1
+    100076: joint38
+    100078: joint39
+    100080: joint39 1
+    100082: joint4
+    100084: joint4 1
+    100086: joint40
+    100088: joint40 1
+    100090: joint41
+    100092: joint41 1
+    100094: joint42
+    100096: joint42 1
+    100098: joint43
+    100100: joint44
+    100102: joint44 1
+    100104: joint45
+    100106: joint45 1
+    100108: joint46
+    100110: joint46 1
+    100112: joint47
+    100114: joint47 1
+    100116: joint48
+    100118: joint48 1
+    100120: joint49
+    100122: joint49 1
+    100124: joint5
+    100126: joint5 1
+    100128: joint50
+    100130: joint50 1
+    100132: joint51
+    100134: joint51 1
+    100136: joint52
+    100138: joint52 1
+    100140: joint53
+    100142: joint53 1
+    100144: joint54
+    100146: joint54 1
+    100148: joint55
+    100150: joint55 1
+    100152: joint56
+    100154: joint56 1
+    100156: joint57
+    100158: joint57 1
+    100160: joint58
+    100162: joint58 1
+    100164: joint59
+    100166: joint59 1
+    100168: joint6
+    100170: joint6 1
+    100172: joint7
+    100174: joint8
+    100176: joint81
+    100178: joint82
+    100180: joint9
+    100182: //RootNode
+    100184: pelvis_ctrl
+    100186: root_ctrl
+    400000: dirt_monster_05:headusOBJexport
+    400002: Global_ctrl
+    400004: J_L_ear
+    400006: j_L_thigh
+    400008: J_R_ear
+    400010: j_R_thigh
+    400012: joint10
+    400014: joint11
+    400016: joint12
+    400018: joint13
+    400020: joint14
+    400022: joint15
+    400024: joint16
+    400026: joint18
+    400028: joint18 1
+    400030: joint19
+    400032: joint19 1
+    400034: joint2
+    400036: joint2 1
+    400038: joint20
+    400040: joint20 1
+    400042: joint21
+    400044: joint21 1
+    400046: joint22
+    400048: joint22 1
+    400050: joint23
+    400052: joint23 1
+    400054: joint24
+    400056: joint25
+    400058: joint26
+    400060: joint27
+    400062: joint3
+    400064: joint3 1
+    400066: joint32
+    400068: joint33
+    400070: joint33 1
+    400072: joint34
+    400074: joint34 1
+    400076: joint38
+    400078: joint39
+    400080: joint39 1
+    400082: joint4
+    400084: joint4 1
+    400086: joint40
+    400088: joint40 1
+    400090: joint41
+    400092: joint41 1
+    400094: joint42
+    400096: joint42 1
+    400098: joint43
+    400100: joint44
+    400102: joint44 1
+    400104: joint45
+    400106: joint45 1
+    400108: joint46
+    400110: joint46 1
+    400112: joint47
+    400114: joint47 1
+    400116: joint48
+    400118: joint48 1
+    400120: joint49
+    400122: joint49 1
+    400124: joint5
+    400126: joint5 1
+    400128: joint50
+    400130: joint50 1
+    400132: joint51
+    400134: joint51 1
+    400136: joint52
+    400138: joint52 1
+    400140: joint53
+    400142: joint53 1
+    400144: joint54
+    400146: joint54 1
+    400148: joint55
+    400150: joint55 1
+    400152: joint56
+    400154: joint56 1
+    400156: joint57
+    400158: joint57 1
+    400160: joint58
+    400162: joint58 1
+    400164: joint59
+    400166: joint59 1
+    400168: joint6
+    400170: joint6 1
+    400172: joint7
+    400174: joint8
+    400176: joint81
+    400178: joint82
+    400180: joint9
+    400182: //RootNode
+    400184: pelvis_ctrl
+    400186: root_ctrl
+    4300000: dirt_monster_05:headusOBJexport
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: dirt_monster_05:headusOBJexport
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: dirt_monster_05:headusOBJexport
+        weight: 1
+      - path: Global_ctrl
+        weight: 1
+      - path: Global_ctrl/joint7
+        weight: 1
+      - path: Global_ctrl/joint7/joint9
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18/joint19
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18/joint19/joint20
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18/joint19/joint20/joint21
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18/joint19/joint20/joint21/joint22
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_L_ear/joint18/joint19/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1/joint19 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1/joint19 1/joint20 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1/joint19 1/joint20 1/joint21 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1/joint19 1/joint20 1/joint21 1/joint22 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/J_R_ear/joint18
+          1/joint19 1/joint20 1/joint21 1/joint22 1/joint23 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint13
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint32
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint32/joint33
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint32/joint33/joint34
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint38
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint38/joint33
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint24/joint25/joint26/joint27/joint38/joint33
+          1/joint34 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint8/joint12/joint16/joint82
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint45
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint45/joint46
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint45/joint46/joint47
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint45/joint46/joint47/joint48
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint45/joint46/joint47/joint48/joint49
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint50
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint50/joint51
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint50/joint51/joint52
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint50/joint51/joint52/joint53
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint50/joint51/joint52/joint53/joint54
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint55
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint55/joint56
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint55/joint56/joint57
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint55/joint56/joint57/joint58
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint43/joint44/joint39/joint40/joint41/joint42/joint55/joint56/joint57/joint58/joint59
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint45 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint45 1/joint46 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint45 1/joint46 1/joint47 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint45 1/joint46 1/joint47 1/joint48 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint45 1/joint46 1/joint47 1/joint48 1/joint49
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint50 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint50 1/joint51 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint50 1/joint51 1/joint52 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint50 1/joint51 1/joint52 1/joint53 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint50 1/joint51 1/joint52 1/joint53 1/joint54
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint55 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint55 1/joint56 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint55 1/joint56 1/joint57 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint55 1/joint56 1/joint57 1/joint58 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint9/joint10/joint11/joint81/joint44 1/joint39
+          1/joint40 1/joint41 1/joint42 1/joint55 1/joint56 1/joint57 1/joint58 1/joint59
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh/joint2
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh/joint2/joint3
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh/joint2/joint3/joint4
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_L_thigh/joint2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh/joint2 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh/joint2 1/joint3 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh/joint2 1/joint3 1/joint4 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh/joint2 1/joint3 1/joint4 1/joint5
+          1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/j_R_thigh/joint2 1/joint3 1/joint4 1/joint5
+          1/joint6 1
+        weight: 1
+      - path: Global_ctrl/joint7/joint14/joint15
+        weight: 1
+      - path: Global_ctrl/root_ctrl
+        weight: 1
+      - path: Global_ctrl/root_ctrl/pelvis_ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public Character[] characters;
     public bool AllowChasing = true;
-
+    public bool isDead = false;
     public CharacterController CharController;
 
     void Start()
@@ -109,8 +109,11 @@ public class Enemy : MonoBehaviour
             Vector3 newPos = Vector3.MoveTowards(transform.position, target, step);
             CharController.Move(newPos - transform.position);
 
-	        if (Mathf.Abs(Vector3.Distance(this.transform.position, wayPoints[wayPointIndex].transform.position)) <=
-	            switchY)
+
+            Vector3 dir = wayPoints[wayPointIndex].transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(dir);
+
+            if (Mathf.Abs(Vector3.Distance(transform.position, wayPoints[wayPointIndex].transform.position)) <= switchY)
 	        {
 	            wayPointIndex++;
 	            if (wayPointIndex >= wayPoints.Length)
@@ -163,15 +166,22 @@ public class Enemy : MonoBehaviour
             float chaseStep = chaseSpeed*Time.deltaTime;
             Vector3 newPos = Vector3.MoveTowards(transform.position, chaseTarget.position, chaseStep);
             CharController.Move(newPos - transform.position);
+
+            Vector3 dir = chaseTarget.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(dir);
         }
     }
 
     public void Capture()
     {
-        meshRend.material.color = Color.magenta;
-        if(mySection != null)
-            mySection.EnemiesLeft--;
-        Die();
+        if (!isDead)
+        {
+            isDead = true;
+            meshRend.material.color = Color.magenta;
+            if (mySection != null)
+                mySection.EnemiesLeft--;
+            Die();
+        }
     }
 
     public void Die()
