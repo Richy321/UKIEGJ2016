@@ -99,16 +99,21 @@ public class Enemy : MonoBehaviour
 
 	public void UpdatePatrol()
 	{
-		float step = patrolSpeed * Time.deltaTime;
-		Vector3 target = wayPoints [wayPointIndex].transform.position;
-		this.transform.position = Vector3.MoveTowards (transform.position, target, step);
-		if (Mathf.Abs(Vector3.Distance (this.transform.position, wayPoints [wayPointIndex].transform.position)) <= switchY)
-		{
-			wayPointIndex++;
-			if (wayPointIndex >= wayPoints.Length) {
-				wayPointIndex = 0;
-			}
-		}
+	    if (wayPoints.Length > 0)
+	    {
+            float step = patrolSpeed * Time.deltaTime;
+            Vector3 target = wayPoints[wayPointIndex].transform.position;
+	        this.transform.position = Vector3.MoveTowards(transform.position, target, step);
+	        if (Mathf.Abs(Vector3.Distance(this.transform.position, wayPoints[wayPointIndex].transform.position)) <=
+	            switchY)
+	        {
+	            wayPointIndex++;
+	            if (wayPointIndex >= wayPoints.Length)
+	            {
+	                wayPointIndex = 0;
+	            }
+	        }
+	    }
 	}
 
     public void CheckChaseDistances()
