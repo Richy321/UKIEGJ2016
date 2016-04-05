@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b44196afc0ed06c42951202d3d40af16
-timeCreated: 1459855580
+guid: 7e4317ed78c3c46478937e18fe044c81
+timeCreated: 1459878303
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: headusOBJexport
+    4300000: Gamejam_House_02_02_headusOBJexport
   materials:
     importMaterials: 1
     materialName: 0
