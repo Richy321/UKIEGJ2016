@@ -18,4 +18,8 @@ public interface IEnemyState {
 
 	void ToChaseState ();
 
+    void ToFrozen();
+
+  //  void ToCaptureable();
+
 }

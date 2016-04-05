@@ -34,7 +34,17 @@ public class AlertState : IEnemyState {
 		searchTime = 0f;
 	}
 
-	private void Look(){
+    public void ToFrozen()
+    {
+        
+    }
+
+    //public void ToCaptureable()
+    //{
+        
+    //}
+
+    private void Look(){
 		RaycastHit hit;
 		if (Physics.Raycast (enemy.eyeHeight.position, enemy.eyeHeight.transform.forward, out hit, enemy.sightRange) && hit.collider.CompareTag ("Player")) {
 			enemy.chaseTarget = hit.transform;
