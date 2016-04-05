@@ -15,6 +15,7 @@ public class Laz : MonoBehaviour {
     {
 		laserLine.SetWidth (0.2f, 0.2f);
 		laserLine.enabled = false;
+        stopLaz();
 	}
 
 	void Update()

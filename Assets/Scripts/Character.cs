@@ -14,8 +14,13 @@ namespace Assets.Scripts
         public float speed = 2.0f;
         public float angular = 5.0f;
 		public bool firing;
+        public bool capturing;
 		public bool trapping;
 		public Laz lazScript;
+        public float captureRadius;
+        public Color playerColour;
+
+        public MeshRenderer CaptureRenderer;
 
         public GameObject RootGameObject;
 
@@ -35,6 +40,8 @@ namespace Assets.Scripts
             UpdateAiming();
 
 			UpdateFire ();
+
+            UpdateCapture();
         }
 
         void UpdateMovement()
@@ -50,7 +57,6 @@ namespace Assets.Scripts
 
             //Debug.Log("MoveDelta:" + delta);
             transform.position = newPos;
-
         }
 
         void UpdateAiming()
@@ -92,10 +98,24 @@ namespace Assets.Scripts
             }
         }
 
-		void UpdateFire(){
+        void UpdateCapture()
+        {
+            string fire2 = "TrapP" + PlayerNumber;
+
+            if (Input.GetAxis(fire2) > 0.1f)
+            {
+                capturing = true;
+                CaptureRenderer.material.color = Color.yellow;
+                //Debug.Log("Capturing P" + PlayerNumber);
+            }
+            else
+                CaptureRenderer.material.color = playerColour;
+        }
+
+        void UpdateFire(){
 
 			string fire1 = "FireP" + PlayerNumber;
-			//string fire2 = "TrapP" + PlayerNumber;
+			
 
 			if (Input.GetAxis (fire1) > 0.1f) {
 				if (!firing) {
@@ -120,9 +140,6 @@ namespace Assets.Scripts
 		            }
 
 		        }
-
-
-
 		    }
 
 			if ((Input.GetAxis(fire1) < 0.1f) && firing) 

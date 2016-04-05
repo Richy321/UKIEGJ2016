@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 public class Enemy : MonoBehaviour
 {
@@ -41,7 +42,12 @@ public class Enemy : MonoBehaviour
                 //move towards target if not null
                 break;
             case EnemyState.Frozen:
-                //no not fucking move you cunt
+                    timeFrozen += Time.deltaTime;
+                    if (timeFrozen >= maxFrozen && !isCaptureable)
+                    {
+                        isCaptureable = true;
+                        meshRend.material.color = Color.cyan;
+                    }
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -79,13 +85,28 @@ public class Enemy : MonoBehaviour
     public void Capture()
     {
         meshRend.material.color = Color.magenta;
-        mySection.EnemiesLeft--;
+        if(mySection != null)
+            mySection.EnemiesLeft--;
         Die();
     }
 
     public void Die()
     {
-        Destroy(this);
+        Debug.Log("Die");
+        Destroy(gameObject);
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Capture" && isCaptureable)
+        {
+            Character characterScript = other.gameObject.GetComponentInParent<Character>();
+            if (characterScript)
+            {
+                if (characterScript.capturing)
+                    Capture();
+            }
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -93,16 +114,6 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Bullet" && enemyState != EnemyState.Frozen)
         {
             Freeze();
-        }
-
-        if (enemyState == EnemyState.Frozen)
-        {
-            timeFrozen += Time.deltaTime;
-
-            if (timeFrozen >= maxFrozen)
-            {
-                isCaptureable = true;
-            }
         }
     }
 
