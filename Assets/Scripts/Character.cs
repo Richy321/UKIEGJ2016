@@ -191,11 +191,11 @@ namespace Assets.Scripts
             Debug.Log("P" + PlayerNumber + " took damage " + enemy.damage);
             health -= enemy.damage;
 
-            if (health <= 0)
+           /* if (health <= 0)
             {
                 Die();
                 return;
-            }
+            }*/
 
             Vector3 bounceDir = (transform.position - enemy.gameObject.transform.position);
             Debug.Log("Bounce Dir: " + bounceDir);
