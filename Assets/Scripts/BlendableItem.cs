@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class BlendableItem : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class BlendableItem : MonoBehaviour
     public Renderer rend;
     private float curLerp = 0.0f;
     private bool doLerp = false;
-    private Shader shader = Shader.Find("Custom/BlendShader");
+    private Shader shader;
 
     // Use this for initialization
     void Start ()
     {
+        shader = Shader.Find("Custom/BlendShader");
         rend = GetComponent<Renderer>();
         if(!rend)
         {

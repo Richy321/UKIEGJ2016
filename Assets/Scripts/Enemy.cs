@@ -3,5 +3,6 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-  
+    public LevelSection mySection;
+
 }
