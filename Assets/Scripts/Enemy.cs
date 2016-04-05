@@ -21,22 +21,25 @@ public class Enemy : MonoBehaviour
 
     private SphereCollider radiusCollider;
     public MeshRenderer meshRend;
-    public List<Vector3> Waypoints;
-    public int waypointIndex;
+	public Transform[] wayPoints;
+	public int wayPointIndex = 0;
+	public float switchY = 0.2f;
+	public float patrolSpeed = 10.0f;
 
     public Transform target;
 
         void Start()
     {
+		float step = patrolSpeed * Time.deltaTime;
         radiusCollider = GetComponent<SphereCollider>();
+		Patrol ();
     }
     void Update()
     {
         switch (enemyState)
         {
-            case EnemyState.Patrol:
-                //move towards waypoint
-                //change to next in distance
+		case EnemyState.Patrol:
+			UpdatePatrol ();
                 break;
             case EnemyState.Chase:
                 //move towards target if not null
@@ -72,9 +75,24 @@ public class Enemy : MonoBehaviour
 
     public void Patrol()
     {
-        meshRend.material.color = Color.green;
-        enemyState = EnemyState.Patrol;
-    }
+		meshRend.material.color = Color.green;
+		enemyState = EnemyState.Patrol;
+	}
+
+	public void UpdatePatrol()
+	{
+		float step = patrolSpeed * Time.deltaTime;
+		Vector3 target = wayPoints [wayPointIndex].transform.position;
+		this.transform.position = Vector3.MoveTowards (transform.position, target, step);
+		if (Mathf.Abs(Vector3.Distance (this.transform.position, wayPoints [wayPointIndex].transform.position)) <= switchY)
+		{
+
+			wayPointIndex++;
+			if (wayPointIndex >= wayPoints.Length) {
+				wayPointIndex = 0;
+			}
+		}
+	}
 
     public void Chase(Transform newTarget)
     {
