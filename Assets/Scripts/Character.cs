@@ -15,10 +15,15 @@ namespace Assets.Scripts
         public float angular = 5.0f;
 		public bool firing;
         public bool capturing;
-		public bool trapping;
 		public Laz lazScript;
         public float captureRadius;
         public Color playerColour;
+
+        private float hitBounceAmount = 3.5f;
+        private Vector3 bounceTarget;
+        private float bounceTime;
+        private float bounceTimeMax = 0.5f;
+
 
         public MeshRenderer CaptureRenderer;
 
@@ -26,11 +31,19 @@ namespace Assets.Scripts
 
         public int PlayerNumber = 1;
 
+        public enum PlayerState
+        {
+            None,
+            TakingDamage
+        }
+
+        public PlayerState playerState;
+
         void Start()
         {
 			firing = false;
-			trapping = false;
             health = startHealth;
+            playerState = PlayerState.None;
         }
 
         void Update()
@@ -46,17 +59,29 @@ namespace Assets.Scripts
 
         void UpdateMovement()
         {
-            string horizontalString = "HorizontalMoveP" + PlayerNumber;
-            string verticalString = "VerticalMoveP" + PlayerNumber;
+            if (playerState == PlayerState.TakingDamage)
+            {
+                bounceTime += Time.deltaTime;
 
-            float horizontalMove = Input.GetAxis(horizontalString);
-            float verticalMove = Input.GetAxis(verticalString);
+                transform.position = Vector3.Lerp(transform.position,
+                    bounceTarget, Mathf.Clamp01(bounceTime / bounceTimeMax));
 
-            Vector3 delta = new Vector3(horizontalMove, 0.0f, verticalMove) * speed;
-            Vector3 newPos = transform.position += delta * Time.deltaTime;
+                if(bounceTime >= bounceTimeMax)
+                    playerState = PlayerState.None;  
+            }
+            else
+            {
+                string horizontalString = "HorizontalMoveP" + PlayerNumber;
+                string verticalString = "VerticalMoveP" + PlayerNumber;
 
-            //Debug.Log("MoveDelta:" + delta);
-            transform.position = newPos;
+                float horizontalMove = Input.GetAxis(horizontalString);
+                float verticalMove = Input.GetAxis(verticalString);
+
+                Vector3 delta = new Vector3(horizontalMove, 0.0f, verticalMove)*speed;
+                Vector3 newPos = transform.position += delta*Time.deltaTime;
+
+                transform.position = newPos;
+            }
         }
 
         void UpdateAiming()
@@ -116,7 +141,6 @@ namespace Assets.Scripts
 
 			string fire1 = "FireP" + PlayerNumber;
 			
-
 			if (Input.GetAxis (fire1) > 0.1f) {
 				if (!firing) {
 					lazScript.startLaz ();
@@ -125,23 +149,6 @@ namespace Assets.Scripts
 				} 
 			}
 
-		    if (firing)
-		    {
-		        RaycastHit hit;
-		        Vector3 lazVec = lazScript.endPoint.position - lazScript.startPoint.position;
-
-
-		        if (Physics.Raycast(lazScript.startPoint.position, Vector3.Normalize(lazVec), out hit, lazVec.magnitude))
-		        {
-		            Enemy enemyScript = hit.transform.gameObject.GetComponent<Enemy>();
-		            if (enemyScript)
-		            {
-		               
-		            }
-
-		        }
-		    }
-
 			if ((Input.GetAxis(fire1) < 0.1f) && firing) 
 			{
 						lazScript.stopLaz ();
@@ -149,5 +156,39 @@ namespace Assets.Scripts
 						Debug.Log ("Stop");
 			}
 		}
+
+        public void TakeDamage(Enemy enemy)
+        {
+            if (playerState == PlayerState.TakingDamage)
+                return;
+
+            Debug.Log("P" + PlayerNumber + " took damage " + enemy.damage);
+            health -= enemy.damage;
+
+            if (health <= 0)
+            {
+                Die();
+                return;
+            }
+
+            Vector3 bounceDir = (transform.position - enemy.gameObject.transform.position);
+            Debug.Log("Bounce Dir: " + bounceDir);
+            bounceDir.Normalize();
+            
+            bounceTime = 0.0f;
+
+            bounceTarget = transform.position + bounceDir*hitBounceAmount;
+            bounceTarget.y = transform.position.y; //keep height the same
+
+
+            Debug.Log("bounceTarget: " + bounceTarget);
+
+            playerState = PlayerState.TakingDamage;
+        }
+
+        public void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 	public int wayPointIndex = 0;
 	public float switchY = 0.2f;
 	public float patrolSpeed = 10.0f;
+    public float damage = 25.0f;
 
     public Transform target;
 
@@ -132,6 +133,12 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Bullet" && enemyState != EnemyState.Frozen)
         {
             Freeze();
+        }
+
+        if (other.tag == "Player")
+        {
+            Character characterScript = other.gameObject.GetComponentInParent<Character>();
+            characterScript.TakeDamage(this);
         }
     }
 

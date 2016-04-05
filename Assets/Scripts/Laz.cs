@@ -47,7 +47,7 @@ public class Laz : MonoBehaviour {
 	public void stopLaz()
 	{
         lazerCollider.center = Vector3.zero;
-	    lazerCollider.size = new Vector3(lazerCollider.size.x, lazerCollider.size.y, 0.1f);
+	    lazerCollider.size = new Vector3(lazerCollider.size.x, lazerCollider.size.y, 0.0f);
 
         laserLine.enabled = false;
 		growTime = 0.0f;
