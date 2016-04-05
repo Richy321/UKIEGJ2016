@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: d674699516ca4a542a7ad3ee1099088f
+timeCreated: 1459884118
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: blaster and pack
+    100002: global_ctrl
+    100004: headusOBJexport
+    100006: //RootNode
+    100008: joint1
+    100010: joint11
+    100012: joint12
+    100014: joint13
+    100016: joint14
+    100018: joint15
+    100020: joint16
+    100022: joint17
+    100024: joint18
+    100026: joint19
+    100028: joint2
+    100030: joint2 1
+    100032: joint20
+    100034: joint20 1
+    100036: joint21
+    100038: joint21 1
+    100040: joint22
+    100042: joint22 1
+    100044: joint23
+    100046: joint23 1
+    100048: joint24
+    100050: joint3
+    100052: joint3 1
+    100054: joint30
+    100056: joint4
+    100058: joint4 1
+    100060: joint5
+    100062: joint5 1
+    100064: nurbsCircle5
+    100066: nurbsCircle6
+    100068: polySurface1
+    100070: polySurface2
+    100072: polySurface3
+    100074: polySurface3 1
+    100076: polySurface4
+    100078: polySurface5
+    100080: transform1
+    100082: transform2
+    100084: transform3
+    100086: transform4
+    100088: transform5
+    100090: transform6
+    400000: blaster and pack
+    400002: global_ctrl
+    400004: headusOBJexport
+    400006: //RootNode
+    400008: joint1
+    400010: joint11
+    400012: joint12
+    400014: joint13
+    400016: joint14
+    400018: joint15
+    400020: joint16
+    400022: joint17
+    400024: joint18
+    400026: joint19
+    400028: joint2
+    400030: joint2 1
+    400032: joint20
+    400034: joint20 1
+    400036: joint21
+    400038: joint21 1
+    400040: joint22
+    400042: joint22 1
+    400044: joint23
+    400046: joint23 1
+    400048: joint24
+    400050: joint3
+    400052: joint3 1
+    400054: joint30
+    400056: joint4
+    400058: joint4 1
+    400060: joint5
+    400062: joint5 1
+    400064: nurbsCircle5
+    400066: nurbsCircle6
+    400068: polySurface1
+    400070: polySurface2
+    400072: polySurface3
+    400074: polySurface3 1
+    400076: polySurface4
+    400078: polySurface5
+    400080: transform1
+    400082: transform2
+    400084: transform3
+    400086: transform4
+    400088: transform5
+    400090: transform6
+    2300000: polySurface5
+    3300000: polySurface5
+    4300000: headusOBJexport
+    4300002: polySurface5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: headusOBJexport
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: blaster and pack
+        weight: 1
+      - path: blaster and pack/polySurface1
+        weight: 1
+      - path: blaster and pack/polySurface1/transform5
+        weight: 1
+      - path: blaster and pack/polySurface2
+        weight: 1
+      - path: blaster and pack/polySurface2/transform4
+        weight: 1
+      - path: blaster and pack/polySurface3 1
+        weight: 1
+      - path: blaster and pack/polySurface3 1/transform3
+        weight: 1
+      - path: blaster and pack/polySurface4
+        weight: 1
+      - path: blaster and pack/polySurface4/transform2
+        weight: 1
+      - path: blaster and pack/transform1
+        weight: 1
+      - path: global_ctrl
+        weight: 1
+      - path: global_ctrl/joint12
+        weight: 1
+      - path: global_ctrl/joint12/joint14
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint13
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint13/joint16
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint13/joint16/joint17
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint24
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint24/joint20
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint24/joint20/joint21
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint24/joint20/joint21/joint22
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint24/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint30
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint30/joint20 1
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint30/joint20 1/joint21 1
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint30/joint20 1/joint21 1/joint22
+          1
+        weight: 1
+      - path: global_ctrl/joint12/joint14/joint15/joint30/joint20 1/joint21 1/joint22
+          1/joint23 1
+        weight: 1
+      - path: global_ctrl/joint12/joint18
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint1
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint1/joint2
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint1/joint2/joint3
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint1/joint2/joint3/joint4
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint11
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint11/joint2 1
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint11/joint2 1/joint3 1
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint11/joint2 1/joint3 1/joint4 1
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint11/joint2 1/joint3 1/joint4 1/joint5
+          1
+        weight: 1
+      - path: global_ctrl/joint12/joint18/joint19
+        weight: 1
+      - path: headusOBJexport
+        weight: 1
+      - path: nurbsCircle6
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle6/polySurface5
+        weight: 1
+      - path: polySurface3
+        weight: 1
+      - path: polySurface3/transform6
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
