@@ -7,6 +7,7 @@ public class Laz : MonoBehaviour {
 	public Transform endPoint;
 	public LineRenderer laserLine;
 	public ParticleSystem particalSys;
+    public BoxCollider lazerCollider;
 	public float growDuration = 0.5f;
 	public float growTime = 0.0f;
 
@@ -21,22 +22,26 @@ public class Laz : MonoBehaviour {
 
 		if (laserLine.enabled) 
 		{
+
 			growTime += Time.deltaTime;
 			laserLine.SetPosition (0, startPoint.position);
 			laserLine.SetPosition (1, endP);
 		}
 	}
 
-	public void startLaz(){
-		laserLine.enabled = true;
+	public void startLaz()
+	{
+	    lazerCollider.enabled = true;
+        laserLine.enabled = true;
 		growTime = 0.0f;
 		particalSys.Play ();
 	}
 
 
-	public void stopLaz(){
-		
-		laserLine.enabled = false;
+	public void stopLaz()
+	{
+	    lazerCollider.enabled = false;
+        laserLine.enabled = false;
 		growTime = 0.0f;
 		particalSys.Stop (); 
 	}

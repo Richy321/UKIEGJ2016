@@ -48,6 +48,7 @@ namespace Assets.Scripts
             Vector3 delta = new Vector3(horizontalMove, 0.0f, verticalMove) * speed;
             Vector3 newPos = transform.position += delta * Time.deltaTime;
 
+            //Debug.Log("MoveDelta:" + delta);
             transform.position = newPos;
 
         }
@@ -103,6 +104,26 @@ namespace Assets.Scripts
 					Debug.Log ("Fire Start");
 				} 
 			}
+
+		    if (firing)
+		    {
+		        RaycastHit hit;
+		        Vector3 lazVec = lazScript.endPoint.position - lazScript.startPoint.position;
+
+
+		        if (Physics.Raycast(lazScript.startPoint.position, Vector3.Normalize(lazVec), out hit, lazVec.magnitude))
+		        {
+		            Enemy enemyScript = hit.transform.gameObject.GetComponent<Enemy>();
+		            if (enemyScript)
+		            {
+		               
+		            }
+
+		        }
+
+
+
+		    }
 
 			if ((Input.GetAxis(fire1) < 0.1f) && firing) 
 			{

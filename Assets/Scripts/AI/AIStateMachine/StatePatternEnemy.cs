@@ -10,6 +10,7 @@ public class StatePatternEnemy : MonoBehaviour {
 	public Transform eyeHeight;
 	public Vector3 offset = new Vector3 (0, 0.5f, 0);
 	public MeshRenderer meshRendererFlag;
+    public bool isFrozen = false;
 
 	[HideInInspector] public Transform chaseTarget;
 	[HideInInspector] public IEnemyState currentState;
@@ -17,23 +18,28 @@ public class StatePatternEnemy : MonoBehaviour {
 	[HideInInspector] public AlertState alertState;
 	[HideInInspector] public PatrolState patrolState;
 	[HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public FrozenState frozenState;
+	//[HideInInspector] public CaptureableState captureableState;
 
 	private void Awake(){
 
 		chaseState = new ChaseState (this);
 		alertState = new AlertState (this);
 		patrolState = new PatrolState (this);
+        frozenState = new FrozenState (this);
+     //   captureableState = new CaptureableState(this);
 
-		navMeshAgent = GetComponent<NavMeshAgent> ();
+        navMeshAgent = GetComponent<NavMeshAgent> ();
 
 	
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 
 		currentState = patrolState;
-	
+
 	}
 	
 	// Update is called once per frame
@@ -42,7 +48,7 @@ public class StatePatternEnemy : MonoBehaviour {
 		currentState.UpdateState ();
 	}
 
-	private void OnTriggerEnter (Collider other)
+	public void OnTriggerEnter (Collider other)
 	{
 		currentState.OnTriggerEnter (other);
 	}

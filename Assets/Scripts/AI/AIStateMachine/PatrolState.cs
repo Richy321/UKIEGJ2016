@@ -12,13 +12,17 @@ public class PatrolState : IEnemyState {
 
 	public void UpdateState () {
 
-		Look ();
+		//Look ();
 		patrol ();
 	}
 
-	public void OnTriggerEnter (Collider other){
+    
+	public void OnTriggerEnter (Collider other)
+    {
 		if (other.gameObject.CompareTag ("Player"))
 			ToAlertState ();
+        if (other.gameObject.CompareTag("Bullet"))
+            ToFrozen();
 	}
 
 	public void ToPatrolState (){
@@ -41,7 +45,18 @@ public class PatrolState : IEnemyState {
 		}
 	}
 
-	void patrol() {
+    public void ToFrozen()
+    {
+
+    }
+
+    //public void ToCaptureable()
+    //{
+
+    //}
+
+
+    void patrol() {
 
 		enemy.meshRendererFlag.material.color = Color.green;
 		enemy.navMeshAgent.destination = enemy.wayPoints [nextWayPoint].position;
