@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e6f3145f4befc1d49954ab92a54ee103
-timeCreated: 1459859858
+guid: 2a768e00ffe95184cab6ec05f89a29a3
+timeCreated: 1459874941
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: headusOBJexport002
+    4300000: Box003
   materials:
     importMaterials: 1
     materialName: 0
