@@ -40,6 +40,7 @@ public class LevelSection : MonoBehaviour
             }
         }
         startEnemies = EnemiesLeft;
+        prevEnemies = startEnemies;
 
         BlendableItem[] blendables = GameObject.FindObjectsOfType<BlendableItem>();
         foreach (BlendableItem blendable in blendables)
@@ -61,7 +62,7 @@ public class LevelSection : MonoBehaviour
             foreach (BlendableItem curItem in myBlendables)
             {
                 curItem.duration = blendTime;
-                curItem.LerpTo(1 - (EnemiesLeft / startEnemies));
+                curItem.LerpTo(1 - ((float)EnemiesLeft / startEnemies));
             }
             prevEnemies = EnemiesLeft;
         }
@@ -79,10 +80,10 @@ public class LevelSection : MonoBehaviour
         {
             sceneCont.CurSection = this;
         }
-        else if(EnemiesLeft > 0)
+        /*else if(EnemiesLeft > 0)
         {
             prevEnemies = EnemiesLeft;
-        }
+        }*/
 
 	}
 }

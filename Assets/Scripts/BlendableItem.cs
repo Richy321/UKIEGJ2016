@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class BlendableItem : MonoBehaviour
@@ -12,16 +13,19 @@ public class BlendableItem : MonoBehaviour
     private bool doLerp = false;
     private float lerpDistance = 0.0f;
     private Shader shader;
+    public List<Renderer> rends;
 
     // Use this for initialization
     void Start ()
     {
         shader = Shader.Find("Custom/BlendShader");
-        rend = GetComponent<Renderer>();
-        if(!rend)
-        {
-            rend = GetComponentInChildren<Renderer>();
-        }
+        Renderer rend = GetComponent<Renderer>();
+        if (rend)
+            rends.Add(rend);
+
+        Renderer[] rendArr = GetComponentsInChildren<Renderer>();
+
+        rends.AddRange(rendArr);
     }
 
     public void LerpTo(float toLerpTo)
@@ -46,6 +50,11 @@ public class BlendableItem : MonoBehaviour
                 doLerp = false;
             }
             rend.material.SetFloat("_Saturation", curLerp);
+
+            foreach (Renderer item in rends)
+            {
+                item.material.SetFloat("_Saturation", curLerp);
+            }
         }
     }
 }
