@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class BlendableItem : MonoBehaviour
 {
     public float duration = 2.0f;
-    public Renderer rend;
     private float endLerp = 1.0f;
     private float curLerp = 0.0f;
     private bool doLerp = false;
@@ -49,7 +48,6 @@ public class BlendableItem : MonoBehaviour
                 if (curLerp > endLerp) curLerp = endLerp;
                 doLerp = false;
             }
-            rend.material.SetFloat("_Saturation", curLerp);
 
             foreach (Renderer item in rends)
             {
